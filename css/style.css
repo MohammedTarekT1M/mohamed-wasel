@@ -56,6 +56,11 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-fo
 .tags{font-size:0.85rem;color:var(--muted);margin-bottom:10px}
 .proj-actions{display:flex;gap:8px}
 
+/* Gallery */
+.photography .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:12px}
+.photography .gallery-item{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid #e6eef6;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease}
+.photography .gallery-item:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(12,38,63,0.12)}
+
 /* Skills */
 .skill-list{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:6px 0 0}
 .skill-list li{background:#eef6ff;padding:8px 12px;border-radius:999px;color:var(--text);font-weight:600}
@@ -89,6 +94,8 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-fo
   max-height: 80vh;
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  cursor: zoom-in;
+  transition: transform 0.08s ease-out;
 }
 
 .lightbox .close {
@@ -105,6 +112,10 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-fo
 .lightbox .close:hover {
   color: #ddd;
 }
+
+/* Zoom states */
+.lightbox.zoomed .lightbox-content{cursor: grab;}
+.lightbox.dragging .lightbox-content{cursor: grabbing;}
 
 /* Responsive */
 @media (max-width:760px){
