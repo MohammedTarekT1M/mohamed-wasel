@@ -96,6 +96,18 @@ body.dark .btn.ghost .page-shell{
   background: transparent;
   border-color: rgba(255,255,255,0.5);
 }
+body.dark a,
+body.dark p,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark span,
+body.dark li {
+  color: #fff !important;
+}
 /* iOS Liquid Glass Toggle */
 .ios-toggle {
   position: relative;
