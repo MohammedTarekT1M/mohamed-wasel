@@ -96,6 +96,63 @@ body.dark .btn.ghost .page-shell{
   background: transparent;
   border-color: rgba(255,255,255,0.5);
 }
+/* iOS Liquid Glass Toggle */
+.ios-toggle {
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.ios-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: rgba(180, 180, 180, 0.3);
+  border-radius: 999px;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3),
+              0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.4s cubic-bezier(.4,.0,.2,1);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(145deg, #ffffff, #dfe9f3);
+  border-radius: 50%;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25),
+              inset 0 2px 2px rgba(255,255,255,0.9);
+  transition: transform 0.4s cubic-bezier(.4,.0,.2,1),
+              background 0.3s;
+}
+
+/* ON state */
+input:checked + .slider {
+  background: rgba(52,199,89,0.9);
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3),
+              0 4px 15px rgba(52,199,89,0.35);
+}
+
+input:checked + .slider::before {
+  transform: translate(28px, -50%);
+  background: linear-gradient(145deg, #7bffb2, #25d366);
+}
+
 
 /* Main */
 .main{padding:24px 20px 60px}

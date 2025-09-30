@@ -196,8 +196,9 @@ function updateDateTime() {
   setInterval(updateDateTime, 1000);
    // Dark Mode toggle
     const toggle = document.querySelector("#darkModeToggle");
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-    });
+    toggle.addEventListener("change", () => {
+    document.body.classList.toggle("dark", toggle.checked);
+});
+
+    
   
